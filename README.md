@@ -1,2 +1,7 @@
-＃ 博客
-后台使用nodeJS，前台框架使用angular，以及数据库为MySQL
+＃blog
+##前端
+-angular框架
+##后台
+-nodeJS
+##数据库
+-MySQL
