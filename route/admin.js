@@ -1,6 +1,6 @@
 const express=require('express');
 const common=require('../libs/common.js');
-const myaql=require('mysql')
+const mysql=require('mysql');
 
 var db=mysql.createPool({host:'localhost',user:'root',password:'033629',database:'node_blog'});
 
@@ -16,33 +16,42 @@ module.exports=function (){
         }
     });
 
-    //
-    router.use('/login', (req, res)=>{
+    //GET
+    router.get('/login',(req,res)=>{
+       res.render('admin/login.ejs',{});
+    });
+    //POST
+    router.post('/login', (req, res)=>{
         var username=req.body.username;
         var password=common.md5(req.body.password+common.MD5_SUFFIX);
 
         db.query(`SELECT * FROM admin_table WHERE username='${username}'`,
         (err,data)=>{
-            console.log(data);//测试
             if(err){
                 console.log(err);
-                res.status(500).send('database error').end();
+                res.status(500).send('database error').end();   //服务器错误
             }else{
                if(data.length==0) {
-                   res.status(400).send('no this admin').end();
+                   res.status(400).send('no this admin').end(); //查无此人
                }else{
                    if(data[0].password==password){
                        //成功
                        req.session['admin_id']=data[0].ID;
                        res.redirect('/admin/');
                    }else{
-                        res.status(400).send('this password is incorrect').end();
+                        res.status(400).send('this password is incorrect').end();  //密码错误
                    }
                }
             }
         });
+    });
 
-        res.render('admin/login.ejs', {});
+    router.get('/',(req,res)=>{
+       res.render('admin/index.ejs',{});
+    });
+
+    router.get('/banners',(req,res)=>{
+       res.render('admin/banners.ejs',{});
     });
 
     return router;

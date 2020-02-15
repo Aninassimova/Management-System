@@ -17,13 +17,19 @@
     </option>
   </component>
   <component name="ProjectId" id="1WpVAFqKVUe3O5QeD2whzwXs4DJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../iframe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/template/admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\learn\node\lesson\template\admin" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -74,7 +80,7 @@
       <workItem from="1581338409590" duration="15732000" />
       <workItem from="1581505954459" duration="3599000" />
       <workItem from="1581664787189" duration="3862000" />
-      <workItem from="1581769258405" duration="17054000" />
+      <workItem from="1581769258405" duration="21559000" />
     </task>
     <servers />
   </component>
