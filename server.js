@@ -39,7 +39,7 @@ server.set('view engine', 'html');
 
 //4.route
 server.use('/',require('./route/web.js')());
-server.use('/admin',require('./route/admin.js')());
+server.use('/admin',require('./route/admin/index.js')());
 
 //5.default：static
 server.use(static('./static/'));
