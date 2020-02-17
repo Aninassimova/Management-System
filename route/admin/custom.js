@@ -149,16 +149,7 @@ module.exports=function () {
                     }
                 });
             }else{                //添加
-                db.query(`INSERT INTO custom_evaluation_table \
-                    (title, description, src)
-                    VALUES('${title}', '${description}', '${newFileName}')`, (err, data)=>{
-                    if(err){
-                        console.error(err);
-                        res.status(500).send('database error').end();
-                    }else{
-                        res.redirect('/admin/custom');
-                    }
-                });
+                res.status(400).send('必须提交头像').end();
             }
         }
     });
